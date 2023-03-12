@@ -18,7 +18,7 @@ input {
     display: none;
 }
 
-@media screen and (max-wigth: 1080px) {
+@media screen and (max-width: 1080px) {
     body {
         font-size: 1.5em;
     }
@@ -34,6 +34,29 @@ input {
     label:hover {
         cursor: pointer;
     }
+
+    label:hover .sign{
+        transform: rotate(45deg);
+    }
+
+    label:hover .meme {
+        display:block;
+        margin: 0 auto;
+        width: 60%;
+        tra: all ease 1s;
+    }
+
+    .whraper:not(:hover) .text {
+        color:blue;
+    }
+
+    .whraper:not(:hover) .sign{
+        display: none;
+    }
+}
+
+input:checked ~ .text .sign{
+    transform: rotate(45deg);
 }
 
 .meme {
@@ -58,8 +81,14 @@ input:checked ~ .meme {
     width: 60%;
 
 }
+.text {
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.1em solid black;
+}
 
 .sign {
-    position: flex;
-    font-size: 10em;
+    font-size: 2em;
+    margin: 0;
+    transition: 1s;
 }
